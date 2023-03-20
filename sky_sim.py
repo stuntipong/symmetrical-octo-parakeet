@@ -6,7 +6,8 @@ import math
 import random
 
 def get_radec():
-    '''Determine Andromeda location in ra/dec degrees from wikipedia'''
+    '''Determine Andromeda location in RA/DEC degrees from wikipedia
+    the output is in a format of (RA,DEC)'''
     RA = '00:42:44.3'
     DEC = '41:16:09'
 
@@ -22,14 +23,16 @@ def get_radec():
     return (RA,DEC)
 
 def make_stars(RA,DEC,num_stars):
-    '''make 1000 stars within 1 degree of Andromeda'''
-    #num_stars = 1_000_000
+    '''Make objects within 1 degree of Andromeda using a function random.uniform
+    Inputs are RA in degrees, DEC in degrees and a number of objects
+    Outputs are in a format of (a set of RA, a set of DEC)
+    Each set obtains members at the number of objects'''
     RAS = []
     DECS = []
     for i in range(num_stars):
         RAS.append(RA + random.uniform(-1,1))
         DECS.append(DEC + random.uniform(-1,1))
-    return (RAS,DECS,num_stars)
+    return (RAS,DECS)
 
 def main():
     RA,DEC = get_radec()
