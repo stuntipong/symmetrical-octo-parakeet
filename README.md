@@ -21,3 +21,9 @@ Day 2: 21 March 2023
 1. Documentation on the codes
 Provide more information on the written codes using comments in each def function().
 
+2. Enable the codes to receive initial inputs, i.e. a command line interface (CLI).
+Using the function argparse and modify the codes as version05-06
+
+3. Testing the written codes both manually and automatically
+For the automatic mode, use the function pytest and make sure that the testing code file starts with 'test'.
+
