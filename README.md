@@ -26,4 +26,6 @@ Using the function argparse and modify the codes as version05-06
 
 3. Testing the written codes both manually and automatically
 For the automatic mode, use the function pytest and make sure that the testing code file starts with 'test'.
+Also, test for the coverage: the fraction of lines of code being executed during the test run.
 
+4. 
