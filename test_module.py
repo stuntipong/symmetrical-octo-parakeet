@@ -18,7 +18,7 @@ if __name__ == "__main__":
 def test_get_radec():
     answer = (14.215420962967535, 41.26916666666667)
     result = sky_sim.get_radec()
-    testing.assert_allclose(answer, result, atol=1./3600)
+    testing.assert_allclose(answer, result, atol=1./3600) #add some more tolerance in the test
     return
     #if answer != result:
     #    raise AssertionError(f"Position of M31 Should be {answer}, but got {result}")
