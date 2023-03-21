@@ -6,7 +6,7 @@ import math
 import random
 import argparse
 
-num_stars = 1_000_000
+#num_stars = 1_000_000
 
 def get_radec():
     '''Determine Andromeda location in RA/DEC degrees from wikipedia
@@ -62,6 +62,8 @@ def skysim_parser():
                         help="Central ra (degrees) for the simulation location")
     parser.add_argument('--dec', dest = 'dec', type=float, default=None,
                         help="Central dec (degrees) for the simulation location")
+    parser.add_argument('--num', dest = 'num', type=int, default=None,
+                        help="Number of objects")
     parser.add_argument('--out', dest='out', type=str, default='catalog.csv',
                         help='destination for the output catalog')
     return parser
@@ -69,12 +71,13 @@ def skysim_parser():
 def main():
     parser = skysim_parser()
     options = parser.parse_args()
-    # if ra/dec are not supplied the use a default value
-    if None in [options.ra, options.dec]:
+    # if ra/dec/num_stars are not supplied the use a default value
+    if None in [options.ra, options.dec,options.num]:
         ra, dec = get_radec()
     else:
         ra = options.ra
         dec = options.dec
+        num_stars = options.num
     
     ras, decs = make_stars(ra,dec,num_stars)
     # now write these to a csv file for use by my other program
